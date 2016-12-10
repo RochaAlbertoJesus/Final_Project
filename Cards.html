@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Study Cards</title>
+    <link rel="stylesheet" href="Cards.css">
+
+</head>
+<body>
+
+   <video autoplay loop  muted class="background" id="sitebackground">
+       
+    <source src="LAABOVE.mp4" type="video/mp4"/>
+
+</video>
+
+<div class="dropdown">
+
+    <button class="dropbtn" onclick="changeDeck()">Change Deck</button>
+
+</div>
+
+<div class="dropdown">
+    <button class="dropbtn">Add Deck</button>
+    <div class="dropdown-content" id="adddeck">
+        <input type="text" id="newdeckname" placeholder="Deck Name"/>
+        <input type="text" id="newdeckquestion" placeholder="Question"/>
+        <input type="text" id="newdeckanswer" placeholder="Answer"/>
+
+        <div class="popup" onclick="addDeck()">Add
+            <span class="popuptext" id="popupadddeck">You left an empty field.</span>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="dropdown">
+    <button class="dropbtn">Add Card</button>
+    <div class="dropdown-content">
+        <input type="text" id="addcardquestion" placeholder="Question"/>
+        <input type="text" id="addcardanswer" placeholder="Answer"/>
+        <div class="popup" onclick="addCards()">Add
+            <span class="popuptext" id="popupaddcard">You left an empty field.</span>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="dropdown">
+    <button class="dropbtn">Edit Question</button>
+    <div class="dropdown-content">
+        <input type="text" id="editquestion" placeholder="New question"/>
+        <div class="popup" onclick="editquestion()">Edit
+            <span class="popuptext" id="popupeditquestion">You left an empty field.</span>
+        </div>
+
+    </div>
+</div>
+
+<div class="dropdown">
+    <button class="dropbtn">Edit Answer</button>
+    <div class="dropdown-content">
+        <input type="text" id="editanswer" placeholder="New answer"/>
+        <div class="popup" onclick="editAnswer()">Edit
+            <span class="popuptext" id="popupeditanswer">You left an empty field.</span>
+        </div>
+
+    </div>
+</div>
+
+<div class="dropdown">
+    <button id="btnshuffle" class="dropbtn">Shuffle : OFF</button>
+    <div id="shufflediv" class="dropdown-content">
+        <label class="switch">
+            <input id="shuffleison" onchange="checkedShuffle()"  type="checkbox">
+            <div class="slider round"></div>
+        </label>
+    </div>
+</div>
+
+<div class="dropdown">
+    <button id="btnvideocontrol" class="dropbtn">Video Controls : OFF</button>
+    <div id="videodiv" class="dropdown-content">
+
+        <label class="switch">
+            <input id="videoswitch" onchange="videoSwitch()"  type="checkbox">
+            <div class="slider round"></div>
+        </label>
+    </div>
+</div>
+
+
+<div class="flashcardcurrent" id="divcurrentdeck" >
+
+    <h4 class="titeDeck" id="currentdeck" align="center"></h4>
+
+</div>
+
+<div class="flashcard" id="card" align="center" >
+
+    <h1 id="text">Test</h1>
+    <table id="tablebuttons" >
+
+        <tr>
+
+            <th><input class="button-card" id="backbutton" type="button" value="Back"/></th>
+            <th><input class="button-card" id="flipbutton" type="button" value="Flip Question"/></th>
+            <th><input class="button-card" id="nextbutton" type="button" value="Next"/></th>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<script src="Cards.js"></script>
+
+
+</body>
+</html>
